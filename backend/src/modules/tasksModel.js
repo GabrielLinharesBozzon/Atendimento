@@ -1,14 +1,10 @@
-import connection from "./connection";
+import connection from './connection.js'; // Certifique-se de adicionar a extensão .js
 
-const  getAll = async () => {
-    const tasks =  await connection.execute('SELECT * FROM tasks');
-    return tasks;
-
+const getAll = async () => {
+  const [tasks] = await connection.execute('SELECT * FROM tasks');
+  return tasks;
 };
 
-module.exports={
-    getAll
+export default {
+  getAll
 };
-
-
- 
