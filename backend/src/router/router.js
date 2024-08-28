@@ -1,7 +1,7 @@
 import express from "express";
 import cliente from "./clientes.js";
 import funcionarios from "./routerFuncionarios.js";
-import tasksController from '../controller/controller.js';
+import taskController from '../controller/taskController.js'; 
 
 const app = express();
 
@@ -24,7 +24,7 @@ app.delete("/", (req, res) => {
   res.status(203).send("Deletado");
   console.log("Foi feita a exclusão");
 });
- app.use('/tasks',tasksController.getAll)
+ app.use('/tasks',taskController.getAll)
 app.use("/clientes", cliente);
 app.use("/funcionarios", funcionarios);
 
