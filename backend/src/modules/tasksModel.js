@@ -5,11 +5,13 @@ const getAll = async (req,res) => {
   console.log('Acesso ao banco de dados com sucesso',new Date().toLocaleTimeString());
   return tasks[0];
 };
-const createTask= async (tasks)=>{
+
+const createTask= async (task)=>{
   const{title}= task;
   const query = 'INSERT INOT TASK (TITLE,STATUS,CREATED_AT)VALUES(?,?,?)';
   const dateUTC = new Date(Date.now()).toUTCString(); 
-  const createdtask = await connection.execute(query,[title,'pendete',dateUTC]);
+  const [createdTask] = await connection.execute(query,[title,'pendete',dateUTC]);
+  
   return createTask;
 };
 
