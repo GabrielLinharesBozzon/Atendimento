@@ -2,15 +2,16 @@ import express from "express";
 import cliente from "./clientes.js";
 import funcionarios from "./routerFuncionarios.js";
 import taskRoutes from '../router/routerTasks.js'; // Importar as rotas de tarefas
+import cors  from "cors";
 
 const app = express();
-
 app.use(express.json()); // Para habilitar o envio de JSON nas requisições
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.status(200).send("<h1>Olá mundo!!!</h1>");
   console.log("Recebimento do terminal", new Date());
-});
+});//Rota principal 
 
 app.post("/", (req, res) => {
   res.status(201).send("Envio do POST");
