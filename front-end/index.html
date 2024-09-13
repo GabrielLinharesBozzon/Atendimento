@@ -9,11 +9,9 @@
 </head>
 <body>
     <main>
-        <h1><span class="material-symbols-outlined">
-            edit
-            </span>Lista de tarefas<br>
+        <h1>
             <form class="add-form">
-                <input type="text" placeholder="adicionar tarefa" class="input-task"> <br>
+                <input type="text" placeholder="adicionar tarefa" class="input-task">
                 <button type="button">+</button>
             </form>
             
@@ -21,21 +19,34 @@
                 <thead>
                     <tr>
 
-                        <th>Tarefa</th>
-                        <th>Criada em </th>
-                        <th>Status</th>
-                        <th>acoes</th>
+                        <th> Tarefa </th>
+                        <th> Criada em  </th>
+                        <th> Status </th>
+                        <th> Acoes </th>
 
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-
-                        <td></td>
-                        <td>Criada em </td>
-                        <td>Status</td>
-                        <td>acoes</td>
-
+                        <td>Teste task </td>
+                        <td> 00;00;00 </td>
+                        <td><select>
+                            <option value="Pendente">Pendente</option>
+                            <option value="Atuando">Atuando</option>
+                            <option value="Concluido">Concluido</option>
+                        </select></td>
+                        <td>
+                            <button class="btn-action">
+                                <span class="material-symbols-outlined">
+                                edit
+                                </span>
+                            </button>
+                            <button class="btn-action">
+                                <span class="material-symbols-outlined">
+                                delete
+                                </span>
+                            </button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
