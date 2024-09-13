@@ -6,15 +6,12 @@ services:
     container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: todolist_db # Adicione esta linha
     ports:
       - "3306:3306"
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-    command:
-      --default-authentication-plugin=mysql_native_password
     restart: always
 
 volumes:
   mysql_data:
-#nao esquece de criar a rede para o acesso cabecao 
-#docker network create backend_default
